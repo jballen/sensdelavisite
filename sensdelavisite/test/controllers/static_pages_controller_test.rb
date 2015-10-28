@@ -4,6 +4,12 @@ class StaticPagesControllerTest < ActionController::TestCase
   test "should get home" do
     get :home
     assert_response :success
+    assert_select "title", "Home | Sens de la visite"
   end
 
+  test "should get about" do
+    get :about
+    assert_response :success
+    assert_select "title", "About | Sens de la visite"
+  end
 end

@@ -1,0 +1,28 @@
+# Set up Ruby on Rails
+sudo yum install gcc libxml2 libxml2-devel libxslt libxslt-devel gcc mysql-devel ruby-devel rubygems patch httpd
+sudo gem update --system 2.0.3
+gem install nokogiri
+gem install rails -v 4.2.2
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
+\curl -sSL https://get.rvm.io | bash
+rvm install 2.1.1
+rvm use 2.1.1
+gem install bundler
+sudo yum install postgresql postgresql-devel
+gem install pg
+bundle install
+bundle update
+
+# Install git and clone the repository
+sudo yum install git
+cd ~/
+git clone https://github.com/jballen/sensdelavisite.git
+
+#Setup apache
+cat httpd-cat >> /etc/httpd/conf/httpd.conf
+sudo chkconfig httpd on
+sudo /etc/init.d/httpd start
+
+# Start the server
+cd sensdelavisite
+rails server &
