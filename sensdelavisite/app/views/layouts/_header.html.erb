@@ -8,8 +8,16 @@
         <li><%= link_to "Contact", contact_path %></li>
         <li class="sign-up">
           <% if current_user %>
-            Signed in as <strong><%= current_user.name %></strong>!
-            <%= link_to "Sign out", signout_path, id: "sign_out" %>
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Hello, <strong><%= current_user.name %></strong>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+            </ul>
+          </div>
+            
           <% else %>
             <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
           <% end %>
