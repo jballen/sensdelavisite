@@ -14,4 +14,7 @@ module ApplicationHelper
     return Constants::SITE_NAME
   end
 
+  def site_url
+    return Constants::SITE_URL
+  end
 end
