@@ -1,9 +1,5 @@
 <footer class="footer">
-  <small>
-    <a href="/"><%= site_title %></a>
-    by <a href="http://www.kirstengausch.me">Kirsten Gausch</a> and <a href="http://www.brockallen.me">Brock Allen</a>
-  </small>
-  <nav>
+  <nav class="footer-links nav-right">
     <ul>
       <li><%= link_to "About",   about_path %></li>
       <li><%= link_to "Contact", contact_path %></li>
@@ -11,4 +7,10 @@
       <li><%= link_to "Terms of Service", tos_path %></li>
     </ul>
   </nav>
+  <div class="footer-credits">
+    <small>
+      <a href="/"><%= site_title %></a>
+      by <a href="http://www.kirstengausch.me">Kirsten Gausch</a> and <a href="http://www.brockallen.me">Brock Allen</a>
+    </small>
+  </div>
 </footer>

@@ -1,28 +1,30 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <%= link_to site_title, root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", root_path %></li>
-        <li><%= link_to "About", about_path %></li>
-        <li><%= link_to "Contact", contact_path %></li>
-        <li class="sign-up">
-          <% if current_user %>
-          <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-              Hello, <strong><%= current_user.name %></strong>
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
-            </ul>
-          </div>
-            
-          <% else %>
-            <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
-          <% end %>
-        </li>
+<header class="col-12">
+  <nav>
+    <div class="header-title">
+      <%= link_to site_title, root_path, id: "logo" %>
+    </div>
+    <div class="header-links">
+      <ul>
+        <li>Articles</li>
+        <li><%= link_to "About", about_path, id: "about" %></li>
       </ul>
-    </nav>
-  </div>
+    </div>
+    <div class="header-sign-on">
+      <% if current_user %>
+      <div class="dropdown">
+        <img class="user-thumb-image" 
+             id="dropdownMenu1" 
+             data-toggle="dropdown" 
+             aria-haspopup="true" 
+             aria-expanded="true" 
+             src="<%= current_user.image %>"/>
+        <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
+          <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+        </ul>
+      </div>
+      <% else %>
+        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+      <% end %>
+    </div>
+  </nav>
 </header>

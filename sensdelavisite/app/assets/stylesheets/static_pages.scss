@@ -1,71 +1,92 @@
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
-$borderColor: #DEB887;
+$borderColor: rgba(0,0,0,0.15);
+$mobilePageMargin: 20px;
+$desktopPageMargin: 50px;
+$navBackgroundColor: #fafafa;
 
 /* universal */
+a {
+  text-decoration: none;
+  color: #777;
+}
 
 body {
-  padding-top: 60px;
-}
-
-section {
-  overflow: auto;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.center {
-  text-align: center;
-  h1 {
-    margin-bottom: 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  .container {
+    text-align: center;
   }
 }
-
-/* typography */
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-}
-
-h1 {
-  font-size: 3em;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-h2 {
-  font-size: 1.2em;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: bold;
-}
-
-p {
-  font-size: 1.1em;
-  line-height: 1.7em;
-}
-
-
 /* header */
 
 #logo {
-  float: left;
-  margin-right: 10px;
   font-size: 1.7em;
-  color: white;
   text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
   font-weight: bold;
-  &:hover {
-    color: white;
-    text-decoration: none;
+  text-decoration: none;
+}
+
+ul {
+  padding-left: 0;
+
+  li:first-child {
+    padding-left: 0px;
+    margin-left: 0px;
+  }
+}
+
+header {
+  nav {
+    width: 100%;
+    border-bottom: 1px solid $borderColor;
+    padding-bottom: 10px;
+    margin-top: 10px;
+
+    ul {
+
+      li {
+        padding-left: 15px;
+        display: inline-block;
+      }
+    }
+
+  .dropdown-menu {
+
+  }
+
+  .header-title {
+    display: inline-block;
+    float: left;
+    margin-right: 30px;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  .header-links {
+    display: inline-block;
+    margin-top: 20px;
+    padding-left: 10px;
+    letter-spacing: 1px;
+    ul {
+      margin-top: 0;
+    }
+  }
+
+  .header-sign-on {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+    .user-thumb-image {
+      cursor: pointer;
+      border-radius: 8px;
+      width: 35px;
+    }
+  }
   }
 }
 
@@ -74,23 +95,98 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
-  a {
-    color: $gray;
-    &:hover {
-      color: $gray-darker;
-    }
+  border-top: 1px solid $borderColor;
+  font-size: 12px;
+
+  .footer-credits {
+    display: inline-block;
   }
-  small {
-    float: left;
-  }
+
   ul {
-    float: right;
     list-style: none;
+
     li {
-      float: left;
       margin-left: 15px;
+      display: inline-block;
     }
+  }
+}
+
+/* layout */
+
+.nav-right {
+  float: right;
+  width: auto;
+  display: inline-block;
+  position: relative;
+}
+
+.nav-left {
+  float: left;
+  width: auto;
+  display: inline-block;
+  position: relative;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+/* tablet (roughly) */
+@media only screen and (max-width: 630px) {
+  footer {
+    .footer-links {
+      float: none;
+    }
+    .footer-credits {
+
+    }
+  }
+}
+
+/* mobile phones */
+@media only screen and (max-width: 430px) {
+  .col-1 {width: 100%;}
+  .col-2 {width: 100%;}
+  .col-3 {width: 100%;}
+  .col-4 {width: 100%;}
+  .col-5 {width: 100%;}
+  .col-6 {width: 100%;}
+  .col-7 {width: 100%;}
+  .col-8 {width: 100%;}
+  .col-9 {width: 100%;}
+  .col-10 {width: 100%;}
+  .col-11 {width: 100%;}
+  .col-12 {width: 100%;}
+
+  .nav-right {
+    float: none;
+  }
+
+  .header-title {
+    width: 100%;
+  }
+  header {
+    nav {
+      border-bottom: none;
+    }
+  }
+
+  .header-links {
+    display: block;
+    width: 100%;
+    border-top: 1px solid $borderColor;
+    border-bottom: 1px solid $borderColor;
+    padding-top: 10px;
+    background-color: $navBackgroundColor;
   }
 }
