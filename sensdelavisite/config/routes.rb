@@ -5,13 +5,16 @@ Rails.application.routes.draw do
   get 'contact' => 'static_pages#contact'
   get 'privacy' => 'static_pages#privacy'
   get 'tos' => 'static_pages#tos'
+  get 'articles' => 'articles#index'
 
   # Needed for facebook login
   get 'auth/:provider/callback', to: 'sessions#create'
   get 'auth/failure', to: redirect('/')
   get 'signout', to: 'sessions#destroy', as: 'signout'
 
+  # Resources
   resources :sessions, only: [:create, :destroy]
+  resources :articles
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
