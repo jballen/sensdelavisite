@@ -325,7 +325,7 @@ DEPENDENCIES
   minitest-reporters (= 1.0.5)
   net-ssh
   omniauth-facebook
-  pg (= 0.18.4)
+  pg (~> 0.18.1)
   puma (= 2.11.1)
   rails (= 4.2.2)
   rails_12factor (= 0.0.2)
