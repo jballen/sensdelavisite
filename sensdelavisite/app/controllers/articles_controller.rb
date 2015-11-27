@@ -1,4 +1,6 @@
 class ArticlesController < ApplicationController
+  before_action :admin_user, only: [:edit, :update, :new, :create]
+
  def index
     @articles = Article.order("created_at DESC")
   end
@@ -37,5 +39,10 @@ private
 
   def article_params
     params.require(:article).permit(:title, :body)
+  end
+
+  def admin_user
+     @user = User.find(params[:id])
+     redirect_to(root_url) unless admin_user?(@user)
   end
 end
