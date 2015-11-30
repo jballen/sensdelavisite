@@ -19,7 +19,6 @@ gem 'omniauth-facebook'
 gem 'execjs'
 gem 'therubyracer', :group => :assets
 gem 'net-ssh'
-gem 'puma',           '2.11.1'
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
@@ -35,6 +34,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg',             '~> 0.18.4'
+  gem 'puma',           '2.11.1'
   gem 'rails_12factor', '0.0.2'
+  gem 'mysql2',         '~> 0.3.13'
 end
