@@ -1,0 +1,15 @@
+<div id="login-overlay">
+  <div class="button-close">×</div>
+
+  <div class="overlay-container">
+    <h1 class="site-title"><%=site_title%></h1>
+    <div class="sign-in-message">Sign in or create an account</div>
+    <div class="sign-in-options">
+      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    </div>
+    <div class="information-usage">
+      Sens de la visite respects your privacy, and will never give out your information for any purpose whatsoever. 
+      For our full privacy policy, please <%= link_to 'read here', privacy_path %>.
+    </div>
+  </div>
+</div>

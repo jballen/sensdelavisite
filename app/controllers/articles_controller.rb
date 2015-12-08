@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
-  before_action :admin_user, only: [:edit, :update, :new, :create]
+  before_action :admin_user, only: [:edit, :update, :new, :create, :destroy]
+  include SessionsHelper
 
  def index
     @articles = Article.order("created_at DESC")
@@ -35,6 +36,13 @@ class ArticlesController < ApplicationController
     end
   end
 
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    redirect_to articles_path
+  end
+
 private
 
   def article_params
@@ -42,7 +50,6 @@ private
   end
 
   def admin_user
-     @user = User.find(params[:id])
-     redirect_to(root_url) unless admin_user?(@user)
+    redirect_to(root_url) unless admin_user?
   end
 end

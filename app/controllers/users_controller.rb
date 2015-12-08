@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :admin_user, only: [:index]
+  before_action :admin_user
 
   def index
     @users = User.all
@@ -10,7 +10,6 @@ class UsersController < ApplicationController
 
   private
     def admin_user
-      @user = User.find(params[:id])
-      redirect_to(root_url) unless admin_user?(@user)
+      redirect_to(root_url) unless admin_user?
     end
 end

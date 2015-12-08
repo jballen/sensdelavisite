@@ -1,0 +1,18 @@
+<% if article %>
+<div class="article">
+  <h1 class="title">
+      <%= link_to article.title, article_path(article) %>
+  </h1>
+
+  <div class="article-data">
+    <span class="date"> <%= time_ago_in_words(article.created_at) %> ago </span>
+    <span class="comments"><%= link_to article.comments.count.to_s + " comments", article_path(article)%><span>
+  </div>
+
+  <p class="body">
+    <%= article.body %>
+  </p>
+
+ 
+</div>
+<% end %>

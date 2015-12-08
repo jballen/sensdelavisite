@@ -1,24 +1,25 @@
-<% if @article.errors.any? %>
-  <ul>
-    <%= @article.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-    <% end %>
-  </ul>
-<% end %>
 <%= form_for @article do |f| %>
-  <div>
-    <%= f.label :title %>
-  </div>
-  <div>
+  <% if @article.errors.any? %>
+    <div id="errors">
+      <p> <%= pluralize(@article.errors.count, "error") %> prevented this article from saving.</p>
+      <ul>
+        <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <p>
+    <%= f.label :title %><br>
     <%= f.text_field :title %>
-  </div>
-  <div>
-    <%= f.label :body %>
-  </div>
-  <div>
-    <%= f.cktext_area :body, rows: 10 %>
-  </div>
-  <div>
-    <%= f.submit %>
-  </div>
+  <p>
+
+  <p>
+      <%= f.label :body %><br>
+      <%= f.text_area :body %>
+  </p>
+
+  <p>
+      <%= f.submit %>
+  </p>
 <% end %>

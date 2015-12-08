@@ -5,26 +5,27 @@
     </div>
     <div class="header-links">
       <ul>
-        <li>Articles</li>
+        <li><%= link_to "Articles", articles_path %></li>
         <li><%= link_to "About", about_path, id: "about" %></li>
       </ul>
     </div>
     <div class="header-sign-on">
       <% if current_user %>
-      <div class="dropdown">
-        <img class="user-thumb-image" 
-             id="dropdownMenu1" 
-             data-toggle="dropdown" 
-             aria-haspopup="true" 
-             aria-expanded="true" 
-             src="<%= current_user.image %>"/>
-        <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
-          <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
-        </ul>
-      </div>
+        <div class="dropdown">
+          <img class="user-thumb-image" 
+               id="dropdownMenu1" 
+               data-toggle="dropdown" 
+               aria-haspopup="true" 
+               aria-expanded="true" 
+               src="<%= current_user.image %>"/>
+          <ul class="dropdown-menu pull-right" aria-labelledby="dropdownMenu1">
+            <li><%= link_to "Sign out", signout_path, id: "sign_out" %></li>
+          </ul>
+        </div>
       <% else %>
-        <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+        <div class="sign-in">Sign in</div>
       <% end %>
     </div>
   </nav>
+  <%= render 'layouts/login_overlay' %>
 </header>

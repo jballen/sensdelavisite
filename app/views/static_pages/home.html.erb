@@ -1,9 +1,5 @@
 <div class="center col-12">
-  <h1>Welcome to <%= site_title %></h1>
-
-  <h2>
-    This is the home page for the
-    <a href="/"><%= site_title %></a>
-    sample application.
-  </h2>
+  <p class="recent-article">
+    <%= render partial: "articles/show_article", locals: {article: @article} %>    
+  </p>
 </div>

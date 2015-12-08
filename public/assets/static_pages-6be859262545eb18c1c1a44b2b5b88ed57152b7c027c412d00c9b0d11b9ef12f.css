@@ -1,0 +1,365 @@
+/* mixins, variables, etc. */
+/* Not horrible: #669BBC */
+/* That's a contender: #8093F1 */
+/* Likes it, but hates to admit it: #1B98E0 */
+/* universal */
+/* line 17, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+a {
+  text-decoration: none;
+  color: #777;
+}
+
+/* line 22, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+/* line 25, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+body .container {
+  text-align: center;
+}
+
+/* header */
+/* line 31, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+#logo {
+  font-size: 1.7em;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* line 38, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+ul {
+  padding-left: 0;
+}
+/* line 41, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+ul li:first-child {
+  padding-left: 0px;
+  margin-left: 0px;
+}
+
+/* line 48, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+header nav {
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding-bottom: 10px;
+  margin-top: 10px;
+}
+/* line 56, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+header nav ul li {
+  padding-left: 15px;
+  display: inline-block;
+}
+/* line 63, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+header nav .dropdown-menu li {
+  width: 100%;
+}
+/* line 68, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+header nav .header-title {
+  display: inline-block;
+  float: left;
+  margin-right: 30px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+/* line 76, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+header nav .header-links {
+  display: inline-block;
+  margin-top: 20px;
+  padding-left: 10px;
+  letter-spacing: 1px;
+}
+/* line 81, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+header nav .header-links ul {
+  margin-top: 0;
+}
+/* line 86, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+header nav .header-sign-on {
+  display: inline-block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 20px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+/* line 95, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+header nav .header-sign-on .user-thumb-image {
+  cursor: pointer;
+  border-radius: 8px;
+  width: 35px;
+}
+/* line 101, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+header nav .header-sign-on .sign-in {
+  border-color: #1B98E0;
+  color: #1B98E0;
+  border-radius: 100em;
+  border-width: 1px;
+  border-style: solid;
+  padding: 8px;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+/* Login Overlay */
+/* line 116, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+#login-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.97);
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+/* line 130, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+#login-overlay .button-close {
+  font-size: 32px;
+  position: absolute;
+  top: 0;
+  right: 15px;
+  color: rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+/* line 138, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+#login-overlay .show {
+  display: block;
+}
+/* line 142, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+#login-overlay .overlay-container {
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  margin-top: 55px;
+}
+/* line 148, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+#login-overlay .overlay-container .sign-in-message {
+  font-size: 1.2em;
+}
+/* line 152, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+#login-overlay .overlay-container .information-usage {
+  color: #b3b3b1;
+}
+/* line 156, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+#login-overlay .overlay-container div {
+  margin-top: 15px;
+}
+
+/* footer */
+/* line 164, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  font-size: 12px;
+}
+/* line 170, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+footer .footer-credits {
+  float: right;
+  width: auto;
+  display: inline-block;
+  position: relative;
+}
+/* line 177, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+footer .footer-links {
+  display: inline-block;
+}
+/* line 181, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+footer ul {
+  list-style: none;
+}
+/* line 184, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+footer ul li {
+  margin-left: 15px;
+  display: inline-block;
+}
+
+/* layout */
+/* line 193, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+.nav-right {
+  float: right;
+  width: auto;
+  display: inline-block;
+  position: relative;
+}
+
+/* line 200, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+.nav-left {
+  float: left;
+  width: auto;
+  display: inline-block;
+  position: relative;
+}
+
+/* line 207, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+.col-1 {
+  width: 8.33%;
+}
+
+/* line 208, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+.col-2 {
+  width: 16.66%;
+}
+
+/* line 209, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+.col-3 {
+  width: 25%;
+}
+
+/* line 210, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+.col-4 {
+  width: 33.33%;
+}
+
+/* line 211, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+.col-5 {
+  width: 41.66%;
+}
+
+/* line 212, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+.col-6 {
+  width: 50%;
+}
+
+/* line 213, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+.col-7 {
+  width: 58.33%;
+}
+
+/* line 214, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+.col-8 {
+  width: 66.66%;
+}
+
+/* line 215, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+.col-9 {
+  width: 75%;
+}
+
+/* line 216, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+.col-10 {
+  width: 83.33%;
+}
+
+/* line 217, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+.col-11 {
+  width: 91.66%;
+}
+
+/* line 218, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+.col-12 {
+  width: 100%;
+}
+
+/* tablet (roughly) */
+@media only screen and (max-width: 555px) {
+  /* line 223, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  footer div, footer nav {
+    margin: 0 auto;
+    text-align: center;
+  }
+  /* line 228, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  footer .footer-links {
+    width: 80%;
+    float: none;
+    display: block;
+  }
+  /* line 233, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  footer .footer-credits {
+    float: none;
+    width: 80%;
+    display: block;
+  }
+}
+/* mobile phones */
+@media only screen and (max-width: 555px) {
+  /* line 243, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  .col-1 {
+    width: 100%;
+  }
+
+  /* line 244, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  .col-2 {
+    width: 100%;
+  }
+
+  /* line 245, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  .col-3 {
+    width: 100%;
+  }
+
+  /* line 246, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  .col-4 {
+    width: 100%;
+  }
+
+  /* line 247, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  .col-5 {
+    width: 100%;
+  }
+
+  /* line 248, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  .col-6 {
+    width: 100%;
+  }
+
+  /* line 249, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  .col-7 {
+    width: 100%;
+  }
+
+  /* line 250, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  .col-8 {
+    width: 100%;
+  }
+
+  /* line 251, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  .col-9 {
+    width: 100%;
+  }
+
+  /* line 252, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  .col-10 {
+    width: 100%;
+  }
+
+  /* line 253, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  .col-11 {
+    width: 100%;
+  }
+
+  /* line 254, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  .col-12 {
+    width: 100%;
+  }
+
+  /* line 256, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  .nav-right {
+    float: none;
+  }
+
+  /* line 260, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  .header-title {
+    width: 100%;
+  }
+
+  /* line 264, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  header nav {
+    border-bottom: none;
+  }
+
+  /* line 269, /Users/brock/workspace/sensdelavisite/app/assets/stylesheets/static_pages.scss */
+  .header-links {
+    display: block;
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    padding-top: 10px;
+    background-color: #fafafa;
+  }
+}

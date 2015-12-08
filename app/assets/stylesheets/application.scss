@@ -1,3 +1,330 @@
-@import "bootstrap-sprockets";
 @import "bootstrap";
-@import "static_pages";
+
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+$borderColor: rgba(0, 0, 0, 0.15);
+$mobilePageMargin: 20px;
+$desktopPageMargin: 50px;
+$navBackgroundColor: #fafafa;
+$primaryColor: #1b98e0;
+$colorGrayFade: #b3b3b1;
+
+/* Not horrible: #669BBC */
+/* That's a contender: #8093F1 */
+/* Likes it, but hates to admit it: #1B98E0 */
+
+/* universal */
+a {
+    text-decoration: none;
+    color: #777;
+}
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    .container {
+        max-width: 1000px;
+        margin: auto;
+    }
+}
+
+/* header */
+
+#logo {
+    font-size: 1.7em;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+ul {
+    padding-left: 0;
+    li:first-child {
+        padding-left: 0px;
+        margin-left: 0px;
+    }
+}
+
+header {
+    nav {
+        width: 100%;
+        border-bottom: 1px solid $borderColor;
+        padding-bottom: 10px;
+        margin-top: 10px;
+        ul {
+            li {
+                padding-left: 15px;
+                display: inline-block;
+            }
+        }
+        .dropdown-menu {
+            li {
+                width: 100%;
+            }
+        }
+        .header-title {
+            display: inline-block;
+            float: left;
+            margin-right: 30px;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+        .header-links {
+            display: inline-block;
+            margin-top: 20px;
+            padding-left: 10px;
+            letter-spacing: 1px;
+            ul {
+                margin-top: 0;
+            }
+        }
+        .header-sign-on {
+            display: inline-block;
+            position: absolute;
+            right: 0;
+            top: 0;
+            margin-top: 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            .user-thumb-image {
+                cursor: pointer;
+                border-radius: 8px;
+                width: 35px;
+            }
+            .sign-in {
+                border-color: $primaryColor;
+                color: $primaryColor;
+                border-radius: 100em;
+                border-width: 1px;
+                border-style: solid;
+                padding: 8px;
+                text-decoration: none;
+                letter-spacing: 1px;
+            }
+        }
+    }
+}
+
+/* Login Overlay */
+#login-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.97);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    .button-close {
+        font-size: 32px;
+        position: absolute;
+        top: 0;
+        right: 15px;
+        color: rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
+    &.show {
+        display: block;
+    }
+    .overlay-container {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+        margin-top: 55px;
+        .sign-in-message {
+            font-size: 1.2em;
+        }
+        .information-usage {
+            color: $colorGrayFade;
+        }
+        div {
+            margin-top: 15px;
+        }
+    }
+}
+
+/* Article */
+.article {
+    .article-data {
+        font-size: 0.8em;
+        color: $colorGrayFade;
+    }
+    .date {
+        padding-right: 10px;
+        border-right: 1px solid #b3b3b1;
+        margin-right: 13px;
+    }
+}
+
+/* footer */
+
+footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid $borderColor;
+    font-size: 12px;
+    .footer-credits {
+        float: right;
+        width: auto;
+        display: inline-block;
+        position: relative;
+    }
+    .footer-links {
+        display: inline-block;
+    }
+    ul {
+        list-style: none;
+        li {
+            margin-left: 15px;
+            display: inline-block;
+        }
+    }
+}
+
+/* layout */
+
+.nav-right {
+    float: right;
+    width: auto;
+    display: inline-block;
+    position: relative;
+}
+
+.nav-left {
+    float: left;
+    width: auto;
+    display: inline-block;
+    position: relative;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+/* tablet (roughly) */
+@media only screen and (max-width: 555px) {
+    footer {
+        div,nav {
+            margin: 0 auto;
+            text-align: center;
+        }
+        .footer-links {
+            width: 80%;
+            float: none;
+            display: block;
+        }
+        .footer-credits {
+            float: none;
+            width: 80%;
+            display: block;
+        }
+    }
+}
+
+/* mobile phones */
+@media only screen and (max-width: 555px) {
+    .col-1 {
+        width: 100%;
+    }
+    .col-2 {
+        width: 100%;
+    }
+    .col-3 {
+        width: 100%;
+    }
+    .col-4 {
+        width: 100%;
+    }
+    .col-5 {
+        width: 100%;
+    }
+    .col-6 {
+        width: 100%;
+    }
+    .col-7 {
+        width: 100%;
+    }
+    .col-8 {
+        width: 100%;
+    }
+    .col-9 {
+        width: 100%;
+    }
+    .col-10 {
+        width: 100%;
+    }
+    .col-11 {
+        width: 100%;
+    }
+    .col-12 {
+        width: 100%;
+    }
+    .nav-right {
+        float: none;
+    }
+    .header-title {
+        width: 100%;
+    }
+    header {
+        nav {
+            border-bottom: none;
+        }
+    }
+    .header-links {
+        display: block;
+        width: 100%;
+        border-top: 1px solid $borderColor;
+        border-bottom: 1px solid $borderColor;
+        padding-top: 10px;
+        background-color: $navBackgroundColor;
+    }
+}

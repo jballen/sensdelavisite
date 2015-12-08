@@ -1,0 +1,24 @@
+<div class="article">
+  <h1 class="title">
+    <%= @article.title %>
+  </h1>
+
+  <p class="date">
+    <%= time_ago_in_words(@article.created_at) %> ago
+  </p>
+
+  <p class="body">
+    <%= @article.body %>
+  </p>
+
+  <div class="article-edit">
+    <%= link_to "Edit Article", edit_article_path(@article) %>
+  </div>
+
+  <div class="comments">
+    <h2><%= pluralize(@article.comments.count, 'comment')%> </h2>
+    <%= render @article.comments %>
+    <h3>Add a comment:</h3>
+    <%= render partial: "comments/form" %>
+  </div>
+</div>
